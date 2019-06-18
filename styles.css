@@ -1,0 +1,52 @@
+body {
+  font-family: sans-serif;
+  font-weight: 300;
+  margin: 12px 16px;
+}
+
+.main {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+h1, h2, h3, h4, h5 {
+  color: #174a6b;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+h4 {
+  margin-top: 24px;
+  margin-bottom: 14px;
+}
+
+h5 {
+  margin: 8px 0;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+ul {
+  padding-left: 24px;
+}
+
+#root {
+  display: inline;
+  margin-right: 30px;
+}
+
+input {
+  margin-top: 4px;
+  background-color: #ffc;
+  width: 60px;
+}
+
+.info {
+  color: #888;
+  margin-left: 8px;
+}
+
+.sidenote {
+  color: #888;
+  margin: 4px 0;
+}

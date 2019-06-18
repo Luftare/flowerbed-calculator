@@ -1,0 +1,59 @@
+<!doctype html>
+
+<head>
+  <title>Kukkapenkkilaskuri</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, minimal-ui, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
+
+<body>
+
+  <h1>Kukkapenkkilaskuri</h1>
+
+  <div class="main">
+    <div id="root">
+      <h4>Käytettävissä oleva tila</h4>
+      <input v-model="targetDimensions.x" type="number" @input="repaint()" placeholder="pituus" /> mm
+
+      <span class="info">
+        = {{enclosedTileCounts.x}} kpl, {{enclosedTotalDimensions.x}} mm
+      </span><br>
+      <input v-model="targetDimensions.y" @input="repaint()" placeholder="leveys" /> mm
+      <span class="info">
+        = {{enclosedTileCounts.y}} kpl, {{enclosedTotalDimensions.y}} mm
+      </span><br>
+      <input v-model="targetDimensions.z" @input="repaint()" placeholder="korkeus" /> mm
+      <span class="info">
+        = {{enclosedTileCounts.z}} kpl, {{enclosedTotalDimensions.z}} mm
+      </span><br>
+
+      <h4>Tiilen koko</h4>
+      <input v-model="tileDimensions.x" @input="repaint()" placeholder="pituus" /> mm<br>
+      <input v-model="tileDimensions.y" @input="repaint()" placeholder="leveys" /> mm<br>
+      <input v-model="tileDimensions.z" @input="repaint()" placeholder="korkeus" /> mm<br>
+
+      <h4>Tiilien välys</h4>
+      <input v-model="tileGap" @input="repaint()" placeholder="välys" /> mm<br>
+      <div class="sidenote">pysty ja vaaka</div>
+
+      <h4>Tiilien määrä</h4>
+      <div><b>{{totalTiles}}</b> kpl</div>
+
+      <h4>Hinta</h4>
+      <input v-model="tilePrice" /> € / kpl <span class="info">= {{totalPrice}} €</span>
+    </div>
+
+    <div class="visualization">
+      <h4>Havainnekuva</h4>
+      <canvas id="canvas" width="400" height="400"></canvas>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+  <script src="visualization.js"></script>
+  <script src="app.js"></script>
+</body>
