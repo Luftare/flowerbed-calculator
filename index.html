@@ -37,8 +37,7 @@
       <input v-model="tileDimensions.z" @input="repaint()" placeholder="korkeus" /> mm<br>
 
       <h4>Tiilien välys</h4>
-      <input v-model="tileGap" @input="repaint()" placeholder="välys" /> mm<br>
-      <div class="sidenote">pysty ja vaaka</div>
+      <input v-model="tileGap" @input="repaint()" placeholder="välys" /> mm <span class="info">pysty ja vaaka</span>
 
       <h4>Tiilien määrä</h4>
       <div><b>{{totalTiles}}</b> kpl</div>
